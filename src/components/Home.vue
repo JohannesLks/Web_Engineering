@@ -1,39 +1,29 @@
 <!-- src/components/Home.vue -->
 <template>
   <div>
-    <h1>Willkommen bei TechInnovate Solutions</h1>
-
+    <div id="hero">
+    <img src="/hero-banner.jpg" alt="Hero Banner" />    
+  </div>
     <section id="about-us">
-    <h2>Über TechInnovate Solution</h2>
-    <p>Wir stehen an der Spitze der technologischen Innovation und sind verpflichtet, bahnbrechende Lösungen zu entwickeln, die unsere Kunden und Mitarbeiter stärken.</p>
+      <h1>Willkommen bei TechInnovate Solutions</h1>
+      <p>Wir stehen an der Spitze der technologischen Innovation und sind verpflichtet, bahnbrechende Lösungen zu entwickeln, die unsere Kunden und Mitarbeiter stärken.</p>
     </section>
-    <!-- Hier können Bilder oder Videos hinzugefügt werden -->
-  </div>
-
   
-  <div id="hero">
-    <img src="/hero-banner.jpg" alt="Hero Banner" />
-    <h1>Kommen Sie in unser Team als Systemadministrator</h1>
-  </div>
+    <section id="our-values">
+    <h2>Wir suchen ab sofort Systemadministratoren für unser Team (m/w/d)</h2>
+    </section>
 
+<div class="slideshow-container-background">
   <div class="slideshow-container">
     <div class="slides" :style="{ 'transform': 'translateX(' + (-currentSlide * 100) + '%)' }">
       <div class="slide" v-for="(image, index) in images" :key="index" :style="{ backgroundImage: 'url(' + image + ')' }"></div>
     </div>
     <button class="prev" @click="prevSlide">❮</button>
     <button class="next" @click="nextSlide">❯</button>
+    <h2>Werfen Sie einen Blick in unser modernes Bürogebäude und lernen Sie unsere Arbeitswelt kennen</h2>
   </div>
-
-
-
-  <section id="our-values">
-    <h2>Unsere Werte</h2>
-    <ul>
-    <li>Innovation und Kreativität</li>
-    <li>Integrität und Transparenz</li>
-    <li>Engagement für Exzellenz</li>
-    </ul>
-  </section>
+</div>
+  
 
   <section id="benefits">
   <h2>Warum bei uns arbeiten?</h2>
@@ -43,10 +33,15 @@
     <li>Flexible Arbeitszeiten</li>
     <li>Gesundheits- und Wellnessprogramme</li>
     <li>Fortlaufende Lern- und Entwicklungsmöglichkeiten</li>
-  </ul>
+  </ul>  
+</section>
+
+<section id="contact-us">
+  <h2>Bereit für neue Herausforderungen? Jetzt bewerben und Teil unseres Teams werden!</h2>
+  <button class="button-home-styling">JETZT BEWERBEN!</button>
 </section>
   
-
+</div>
 </template>
 
 <script>
@@ -82,24 +77,49 @@ export default {
 };
 </script>
 
-<style scoped> /*Für das obere Hero-banner*/
+<style scoped>
 #hero {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  }
 
 #hero img {
-  max-width: 100%; /* Stellen Sie sicher, dass das Bild innerhalb des Containers bleibt */
-  height: auto; /* Dies stellt sicher, dass das Seitenverhältnis des Bildes erhalten bleibt */
+  width: 40%;
+  height: auto;
+  border-radius: 500px;
 }
-</style>
 
-<style scoped> /*Für den Slideshow Container*/
+#about-us {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: #F7F7F7;
+  color: #1C1D18;
+}
+
+#our-values {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #234A5F;
+}
+
 .slideshow-container {
   position: relative;
-  max-width: 100%;
+  max-width: 40%;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #1C1D18;
+}
+
+.slideshow-container-background {
+  background-color: #F7F7F7;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .slides {
@@ -112,6 +132,8 @@ export default {
   height: 500px; /* Höhe Ihrer Wahl */
   background-size: cover;
   background-position: center;
+  border-radius: 500px;
+  object-fit: cover;
 }
 
 button.prev,
@@ -127,4 +149,38 @@ button.next {
 
 button.prev { left: 10px; }
 button.next { right: 10px; }
+
+#benefits {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #234A5F;
+}
+
+#contact-us {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #F7F7F7;
+  color: #1C1D18;
+}
+
+.button-home-styling {
+  color: #1C1D18;
+  border-color: #1C1D18;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button-home-styling:hover {
+  color: white;
+  background-color: #1C1D18;
+}
 </style>
